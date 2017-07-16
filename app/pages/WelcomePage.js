@@ -49,6 +49,11 @@ export default class Welcome extends React.Component {
     this.setState({drawings: drawings});
   }
 
+  clear = () => {
+    this._sketch.clear();
+    this._sketch.setBackgroundFromDataUrl('');
+  }
+
   render() {
     return (
       <div>
@@ -64,6 +69,7 @@ export default class Welcome extends React.Component {
 
           <CardActions>
             <RaisedButton label="Save" onClick={this.save}/>
+            <RaisedButton label="Clear" onClick={this.clear}/>
             <Link to={'secondpage'}>
               <RaisedButton label="Go to Second Page" primary={true}/>
             </Link>
